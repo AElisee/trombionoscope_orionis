@@ -1,0 +1,39 @@
+.navBar {
+  width: 100%;
+  margin-bottom: 50px;
+
+  @media screen and (max-width: 991px) {
+    padding: 0 10px;
+    text-align: center;
+  }
+
+  .navLink-ctn {
+    @media screen and (max-width: 991px) {
+      display: grid;
+      grid-template-columns: 50% 50%;
+    }
+    .link {
+      margin: 0 5px;
+      text-align: center;
+
+      @media screen and (max-width: 991px) {
+        padding: 10px 0;
+      }
+
+      a {
+        border-radius: 15px;
+        padding: 7px 15px;
+        display: block;
+        // font-size: 1.3rem;
+        font-size: clamp(1rem, 2vw, 1.3rem);
+        font-weight: 600;
+        transition: all 90ms ease-in-out;
+        background-color: #ebecf0;
+      }
+      a.active {
+        background-color: #036770;
+        color: white;
+      }
+    }
+  }
+}
