@@ -1,25 +1,28 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import SingeEmployee from "./page/SingleEmployee/SingeEmployee";
-import GeneralPage from "./page/directions/GeneralPage";
-import OperationPage from "./page/directions/OperationPage";
-import InformaticPage from "./page/directions/InformaticPage";
-import MarketingPage from "./page/directions/MarketingPage";
+
 import HomePage from "./page/home/HomePage";
 
+import { useDispatch } from "react-redux";
+import { fetchAsyncDirection } from "./redux/direction.slice";
+import DirectionsPage from "./page/directions/DirectionsPage";
+import { fetchAsyncDirectors } from "./redux/directors.Slice";
+
 const App = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchAsyncDirection());
+    dispatch(fetchAsyncDirectors());
+  }, []);
   return (
     <BrowserRouter>
       <Routes>
         <Route path="*" element={<HomePage />} />
         <Route path="/" element={<HomePage />} />
-        <Route path="/direction-generale" element={<GeneralPage />} />
-        <Route path="/direction-operations" element={<OperationPage />} />
-        <Route
-          path="/direction-systeme-information"
-          element={<InformaticPage />}
-        />
-        <Route path="/direction-marketing" element={<MarketingPage />} />
+
+        <Route path="/direction/:directionId" element={<DirectionsPage />} />
+
         <Route path="/details/:id" element={<SingeEmployee />} />
       </Routes>
     </BrowserRouter>

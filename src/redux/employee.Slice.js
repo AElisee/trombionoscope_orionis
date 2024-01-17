@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { STATUS } from "../utils/status";
+import { baseUrl } from "../utils/apiUrl";
 
 const initialState = {
   employeesData: [],
@@ -30,8 +31,7 @@ export const employeeSlice = createSlice({
 export const fetchAsyncEmployees = createAsyncThunk(
   "employees/fetch",
   async () => {
-    const url = "http://localhost:3000/employes";
-    // const url = "http://192.168.1.14:3000/api/colaborateur/";
+    const url = `${baseUrl}colaborateur/`;
     const options = {
       method: "GET",
     };
@@ -45,6 +45,7 @@ export const fetchAsyncEmployees = createAsyncThunk(
     }
   }
 );
+// obtenir les employés de chaque direction
 
 export const getAllEmployees = (state) => state.employees.employeesData;
 export const getEmployesStatus = (state) => state.employees.employesStatus;

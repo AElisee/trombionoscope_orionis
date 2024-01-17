@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Card from "../card/Card";
 import { fetchAsyncEmployees } from "../../redux/employee.Slice";
 
-const SearchComponent = () => {
+const SearchComponent = ({ data }) => {
   const [searchQuery, setSearchQuery] = useState("");
   const employeesData = useSelector((state) => state.employees.employeesData);
   const dispatch = useDispatch();
@@ -14,13 +14,15 @@ const SearchComponent = () => {
   }, [dispatch]);
 
   // Filtrer les employés pour la recherche
-  const filteredEmployees = employeesData.filter((employee) => {
-    const { lastName, firstName } = employee;
+  const filteredEmployees = data.filter((employee) => {
+    const { nom, prenoms } = employee;
+    const poste = employee.poste.title;
     const query = searchQuery.toLowerCase();
 
     return (
-      lastName?.toLowerCase().includes(query) ||
-      firstName?.toLowerCase().includes(query)
+      nom?.toLowerCase().includes(query) ||
+      prenoms?.toLowerCase().includes(query) ||
+      poste?.toLowerCase().includes(query)
     );
   });
   return (
@@ -46,11 +48,16 @@ const SearchComponent = () => {
             </p>
           ) : (
             <div className="card-container">
-              {filteredEmployees.map((employee) => (
-                <Link to={`/details/${employee.id}`} key={employee.id}>
-                  <Card employee={employee} />
-                </Link>
-              ))}
+              {filteredEmployees
+                .slice()
+                .sort((a, b) => {
+                  return a.grade - b.grade;
+                })
+                .map((employee) => (
+                  <Link to={`/details/${employee.id}`} key={employee.id}>
+                    <Card employee={employee} />
+                  </Link>
+                ))}
             </div>
           )}
         </div>
