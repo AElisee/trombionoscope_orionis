@@ -1,0 +1,55 @@
+.sideBar {
+  background-color: #1f2937;
+  min-height: 100vh;
+  padding-left: 0;
+  border-right: 2px solid #f3f4f6;
+  width: 250px;
+  // position: fixed;
+  // top: 0;
+
+  .logo-ctn {
+    border-bottom: 2px solid #f3f4f6;
+    background-color: white;
+    padding: 20px;
+
+    img {
+      width: 70%;
+      height: 70%;
+    }
+  }
+
+  .navlink {
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    padding: 10px 15px;
+    font-size: 1rem;
+    font-weight: 700;
+  }
+
+  .dashboard {
+    margin: 10px 0;
+
+    #menu {
+      text-transform: uppercase;
+      padding-left: 15px;
+      font-size: 0.9rem;
+      padding-bottom: 7px;
+      color: #94a3b8;
+    }
+  }
+
+  .links-ctn {
+    color: white;
+
+    li {
+      width: 100%;
+      margin: 10px 0;
+    }
+  }
+
+  .navlink.active {
+    background-color: #e2e8f0;
+    color: #1f2937;
+  }
+}

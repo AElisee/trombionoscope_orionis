@@ -1,0 +1,15 @@
+.home {
+  .homeContainer {
+    .widget-ctn {
+      flex-wrap: wrap;
+      flex: 1 0 25%;
+      margin-bottom: 20px;
+    }
+
+    .personList.list {
+      .add-btn-ctn {
+        display: none;
+      }
+    }
+  }
+}

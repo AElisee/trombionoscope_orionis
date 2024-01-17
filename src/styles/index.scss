@@ -1,0 +1,14 @@
+@import "./settings";
+
+// PAGES
+@import "./pages/home.scss";
+@import "./pages/singlePerson.scss";
+@import "./pages/details.scss";
+@import "./pages/director.scss";
+
+// COMPONENTS
+@import "./components/sidebar.scss";
+@import "./components/topbar.scss";
+@import "./components/widget.scss";
+@import "./components/list.scss";
+@import "./components/newperson.scss";

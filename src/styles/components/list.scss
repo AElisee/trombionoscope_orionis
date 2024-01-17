@@ -1,0 +1,61 @@
+.list {
+  .header {
+    padding: 10px 0;
+    padding-right: 30px;
+
+    .addItem {
+      border: 1px solid #10b981;
+      border-radius: 5px;
+      padding: 5px 10px;
+      .add-btn {
+        font-weight: 900;
+      }
+      a {
+        display: block;
+        padding: 5px;
+        color: #10b981;
+        font-weight: 700;
+      }
+    }
+  }
+  table,
+  tr {
+    width: 100%;
+  }
+
+  thead {
+    th {
+      background-color: #cbd5e1;
+      padding: 10px;
+      padding-left: 2px;
+      text-align: left;
+      border-bottom: 1px solid #cbd5e1;
+    }
+  }
+
+  tbody {
+    tr {
+      &:hover {
+        background-color: #eaeef3;
+      }
+    }
+    td {
+      height: 50px;
+      border-bottom: 1px solid #cbd5e1;
+      img {
+        width: 40px;
+        height: 40px;
+        border-radius: 360px;
+        border: 1px solid #cbd5e1;
+      }
+    }
+    .actions {
+      padding: 0 5px;
+      span,
+      a {
+        cursor: pointer;
+        border-radius: 5px;
+      }
+    }
+  }
+}

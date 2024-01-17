@@ -1,0 +1,62 @@
+.newperson,
+.update-person {
+  form {
+    padding: 10px 30px;
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-areas: "a b grade" "c d e" "g h h" "i j  k" "l l l" "m m m";
+    gap: 10px;
+
+    input,
+    select,
+    textarea {
+      margin-right: 10px;
+    }
+
+    .services {
+      grid-area: a;
+    }
+    .job {
+      grid-area: b;
+    }
+    .grade {
+      grid-area: grade;
+    }
+
+    .lastName {
+      grid-area: c;
+    }
+    .firstName {
+      grid-area: d;
+    }
+    .email {
+      grid-area: e;
+    }
+    .phone {
+      grid-area: g;
+    }
+    .landline {
+      grid-area: h;
+    }
+
+    .instagram {
+      grid-area: i;
+    }
+
+    .linkedin {
+      grid-area: j;
+    }
+    .file {
+      grid-area: k;
+    }
+    .bio {
+      grid-area: l;
+    }
+
+    .submit-btn {
+      grid-area: m;
+    }
+  }
+}
